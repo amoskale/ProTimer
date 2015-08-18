@@ -1,7 +1,11 @@
 # ProTimer
+
 Powerful JavaScript timer class
+
 Open source (BSD License)
+
 By Raphaël Dujardin (rdujardin.com | github.com/rdujardin)
+
 
 protimer.js : documented source code
 protimer.min.js : minified script
@@ -40,9 +44,13 @@ is paused it will end its period, if it's stopped it will restart from zero.
 ----------------------------------------------------------------------------------------
 
 # ProTimer
+
 Une puissante classe de timers pour JavaScript
+
 Open source (Licence BSD)
+
 Par Raphaël Dujardin (rdujardin.com | github.com/rdujardin)
+
 
 protimer.js : code source documenté
 protimer.min.js : script optimisé
