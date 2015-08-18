@@ -31,7 +31,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //Constructor : takes its parameters as an object
 //Required properties : delay (in milliseconds), callback (function)
 //Optional properties : thisArg (defaults to window), loop (boolean, defaults to true), autoplay (boolean, defaults to true)
-//The timer will call the specified callback after the specified delay, eventually in loop and with a "this" argument
+//The timer will call the specified callback after the specified delay, possibly in loop and with a "this" argument
 //If autoplay!==false the constructor automatically runs the timeout, else you will need to call the play method.
 function Timer(args) {
 	this.delay=args.delay;
