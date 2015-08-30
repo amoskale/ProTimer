@@ -30,13 +30,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 //Constructor : takes its parameters as an object
 //Required properties : delay (in milliseconds), callback (function)
-//Optional properties : thisArg (defaults to window), loop (boolean, defaults to true), autoplay (boolean, defaults to true)
+//Optional properties : loop (boolean, defaults to true), autoplay (boolean, defaults to true)
 //The timer will call the specified callback after the specified delay, possibly in loop and with a "this" argument
 //If autoplay!==false the constructor automatically runs the timeout, else you will need to call the play method.
 function Timer(args) {
 	this.delay=args.delay;
 	this.callback=args.callback;
-	this.thisArg=(typeof args.thisArg!="undefined")?args.thisArg:window;
 	this.loop=(typeof args.loop!="undefined")?args.loop:true;
 	this.paused=false;
 	this.active=false;
@@ -83,7 +82,7 @@ Timer.prototype.stop=function() {
 //trigger() : Private method, don't use it directly.
 Timer.prototype.trigger=function() {
 	if(!this.paused && this.active) {
-		this.callback.call(this.thisArg);
+		this.callback();
 		if(this.loop) {
 			this.playedTime=Date.now();
 			this.timeout=setTimeout(this.trigger.bind(this),this.delay);
