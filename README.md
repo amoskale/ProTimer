@@ -12,12 +12,11 @@ By Raphaël Dujardin (rdujardin.com | github.com/rdujardin)
 * protimer.min.js : minified script
 
 ProTimer provides a class Timer, which is a autoplayable/pausable/stoppable/loopable timer
-based on the setTimeout function. The timer will callback a specified function, possibly
-with a "this" argument if specified.
+based on the setTimeout function. The timer will callback a specified function.
 
 The constructor takes its parameters as an object, which required properties are delay (in 
-milliseconds) and callback (function), and optional properties are thisArg (defaults to
-window), loop (boolean, defaults to true), autoplay (boolean, defaults to true).
+milliseconds) and callback (function), and optional properties are loop (boolean, defaults to true),
+autoplay (boolean, defaults to true).
 
 
 Example :
@@ -26,9 +25,7 @@ var t=new Timer({
 
 	delay: 1000,
 	
-	callback: foo,
-	
-	thisArg: bar,
+	callback: foo.bind(bar),
 	
 	loop: false
 	
@@ -70,13 +67,11 @@ Par Raphaël Dujardin (rdujardin.com | github.com/rdujardin)
 
 ProTimer fournit une classe Timer, un timer basé sur la fonction setTimeout qui a les 
 capacités d'autoplay, d'être mis en pause, arrêté, et d'être joué en boucle. Le timer 
-appellera une fonction callback spécifiée, éventuellement avec un argument "this" si 
-spécifié.
+appellera une fonction callback spécifiée.
 
 Le constructeur prend ses paramètres via un objet, dont les propriétés obligatoirement 
 requises sont delay (en millisecondes) et callback (fonction), et dont les propriétés 
-optionnelles sont thisArg (par défaut : window), loop (booléen, vrai par défaut), autoplay
-(booléen, vrai par défaut).
+optionnelles sont loop (booléen, vrai par défaut), autoplay (booléen, vrai par défaut).
 
 
 Exemple :
@@ -85,9 +80,7 @@ var t=new Timer({
 
 	delay: 1000,
 	
-	callback: foo,
-	
-	thisArg: bar,
+	callback: foo.bind(bar),
 	
 	loop: false
 	
